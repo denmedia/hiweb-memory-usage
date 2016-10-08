@@ -2,7 +2,7 @@
 	/**
 	 * Plugin Name: hiWeb Memory Usage
 	 * Description: A small plug on the measurement of memory used on the site is the site PHP level
-	 * Version: 1.2.0.0
+	 * Version: 1.3.0.0
 	 */
 	
 	
@@ -31,6 +31,21 @@
 		public function is_ajax(){
 			return defined( 'DOING_AJAX' );
 		}
+
+		function get_memory_limit( ){
+			$val = trim( ini_get( 'memory_limit' ) );
+			$last = strtolower( $val[ strlen( $val ) - 1 ] );
+			switch( $last ){
+				// The 'G' modifier is available since PHP 5.1.0
+				case 'g':
+					$val *= 1024;
+				case 'm':
+					$val *= 1024;
+				case 'k':
+					$val *= 1024;
+			}
+			return $val;
+		}
 		
 		
 		public function __construct(){
@@ -42,7 +57,7 @@
 		
 		function getHtml_memoryUsage( $usage, $hiweb_memory_usage ){
 			echo '<div style="position: fixed; top: 20px; padding: 10px; background: #ffffff; right: 10px; border: 3px solid black; z-index: 10000;">Size: ' . hiweb_memoryUsage()->formatBytes( $usage - $hiweb_memory_usage ) . ' / ' . (
-				strpos( ini_get( 'memory_limit' ), 'M' ) !== false ? ini_get( 'memory_limit' ) : hiweb_memoryUsage()->formatBytes( ini_get( 'memory_limit' ) )
+				strpos( ini_get( 'memory_limit' ), 'M' ) !== false ? ini_get( 'memory_limit' ) : hiweb_memoryUsage()->formatBytes( $this->get_memory_limit() )
 				) . '</div>';
 		}
 		
