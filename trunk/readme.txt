@@ -1,7 +1,7 @@
 === hiWeb Memory Usage ===
 Contributors: Den Media
 Donate link:
-Tags: memory, ram, usage, test, check, memory, hosting, server, limit, memory_get_usage
+Tags: memory, ram, usage, test, check, memory, hosting, server, limit, memory_get_usage, php, memory_limit, php.ini, pplugin, free, memory plugin, apache, allocate
 Requires at least: 4.0
 Tested up to: 4.3
 Stable tag: 4.2.4
