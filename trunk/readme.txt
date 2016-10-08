@@ -2,9 +2,9 @@
 Contributors: Den Media
 Donate link:
 Tags: memory, ram, usage, test, check, memory, hosting, server, limit, memory_get_usage, php, memory_limit, php.ini, pplugin, free, memory plugin, apache, allocate
-Requires at least: 4.0
-Tested up to: 4.3
-Stable tag: 4.2.4
+Requires at least: 3.0
+Tested up to: 4.6.1
+Stable tag: 3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
